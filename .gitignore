@@ -8,3 +8,6 @@ HackathonGAmechangers/main_app/migrations/__pycache__/__init__.cpython-37.pyc
 HackathonGAmechangers/main_app/__pycache__/views.cpython-37.pyc
 HackathonGAmechangers/main_app/__pycache__/urls.cpython-37.pyc
 *.pyc
+HackathonGAmechangers/main_app/__pycache__/urls.cpython-37.pyc
+HackathonGAmechangers/main_app/__pycache__/views.cpython-37.pyc
+HackathonGAmechangers/main_app/migrations/__pycache__/__init__.cpython-37.pyc
