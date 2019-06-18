@@ -14,18 +14,22 @@
 </head>
 <body>
     <header>
-            <ul class="right">
+      <nav>
+            <div class="nav-wrapper">
                     <!-- changes below -->
-                    <li class="logo"><a href="{% url 'home' %}">TxStArt</a></li>
+                    <a href="#" class="brand-logo"> Logo</a>
                     {% if user.is_authenticated %}
                     <li><a href="{% url 'profile' %}">profile</a></li>
                     <li><a href="{% url 'logout' %} ">logout</a></li>
                     {% else %}
+                      <ul id ="nav-mobile" class="right hide-on-med-and-down">
                       <li><a href="{% url 'login' %}">Log In</a></li>
-                      <li><a href="{% url 'scenes_create' %}">Add a Scene</a></li>
-                      <li><a href="{% url 'index' %}">View All My Scenes</a></li>
+                      <li><a href="{% url 'index' %}">Scenes</a></li>
+                      <li><a href="{% url 'scenes_create' %}">Create</a></li>
+                      </ul>
                     {% endif %}
-                  </ul>
+            </div>
+        </nav>
 
             
    
