@@ -1,6 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>my posts here</h1>
+{{ user.username }}
 
+{% for scene in scenes %}
+
+
+<div class = "center-align">
+    {% for photo in scene.photo_set.all %}
+      <img class="responsive-img card-panel card large" src="{{photo.url}}">
+    {% empty %}
+      <div class="card-panel teal-text center-align">No Photos Uploaded</div>
+    {% endfor %}
+</div>
+    <div class="card">
+            <a href="{% url 'detail' scene.id %}">
+            <div class="card-content">
+                <span class="card-title"><h3> {{ scene.location }} </h3> </span>
+                <p>Description: {{ scene.description }}</p>
+            </div>
+        </a>
+    </div>
+
+{% endfor %}
 {% endblock %}

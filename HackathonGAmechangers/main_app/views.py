@@ -8,6 +8,7 @@ from .models import Scene, Photo
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate
 
+
 S3_BASE_URL = 'https://s3-us-west-1.amazonaws.com/'
 BUCKET = 'txstreetart'
 # Create your views here.
@@ -64,7 +65,9 @@ def login(request):
     return render(request, 'login.html')
 
 def myposts(request):
-    return render(request, 'myposts.html')
+    scenes = Scene.objects.all()
+    return render(request, 'myposts.html' ,{ 'scenes': scenes })
+
 
 def signup(request):
     if request.method == 'POST':
