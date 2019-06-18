@@ -27,7 +27,7 @@ SECRET_KEY = '^+_!v#!lxpb90tb9-8k2mk_35n(xf-3thk$2t%kv0-#-))f*xg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'austinstreetscenes.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'austinstreetscenes.herokuapp.com','assherokudeployment.herokuapp.com']
 
 
 # Application definition
