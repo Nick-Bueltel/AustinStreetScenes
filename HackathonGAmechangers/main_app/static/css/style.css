@@ -1,19 +1,34 @@
-body {
 
-    
-}
-
-.card {
+/* .card {
     font-family: 'Raleway', sans-serif;
     
-}
+} */
 .card-content {
-    color: Black;
+    font-family: 'Raleway extra-bold 800', sans-serif;
     
 
 }
-#card-title {
-    font-weight: bold;
+.card-title {
+    font-family: 'Raleway 800', sans-serif;
+    color: #266570;
+    position: absolute;
+    top:0;
+    left:10;
+}
+.brand-logo {
+    left:100px;
+}
+.nav-mobile {
+    right:100px;
+}
+
+.desc {
+    position: absolute;
+    top:70px;
+    left: 100px;
+    right: 50px;
+    color: black;
+    font-family: 'Raleway', sans-serif;
 }
 
 
@@ -28,3 +43,7 @@ nav {
     border-bottom: 5px solid teal;
     
 }
+
+/* .topleft {
+    position: absolute;
+} */
