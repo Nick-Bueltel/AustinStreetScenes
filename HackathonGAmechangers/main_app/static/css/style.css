@@ -2,10 +2,15 @@ body {
 
     
 }
+
+html {
+
+    font-size: 17px;
+}
 nav {
     height: 100px;
     line-height: 100px;
-    font-size: large;
-    font-family: 'Teko', sans-serif; 
+    font-family: 'Teko', sans-serif;
+    border-bottom: 5px solid teal;
     
 }
