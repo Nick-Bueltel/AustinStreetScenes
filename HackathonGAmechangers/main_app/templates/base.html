@@ -20,14 +20,20 @@
                 <!-- changes below -->
                 <a href="#" class="brand-logo"> AUSTIN STREET SCENES</a>
                 {% if user.is_authenticated %}
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="{% url 'profile' %}">profile</a></li>
                 <li><a href="{% url 'logout' %} ">logout</a></li>
+                <li><a href="{% url 'index' %}">Scenes</a></li>
+                <li><a href="{% url 'scenes_create' %}">Create</a></li>
+                </ul>
                 {% else %}
-                  <ul id ="nav-mobile" class="right hide-on-med-and-down">
-                  <li><a href="{% url 'login' %}">Log In</a></li>
-                  <li><a href="{% url 'index' %}">Scenes</a></li>
-                  <li><a href="{% url 'scenes_create' %}">Create</a></li>
-                  </ul>
+                <ul id ="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="{% url 'login' %}">Log In</a></li>
+                <li><a href="{% url 'signup' %}">Signup</a></li> 
+                <li><a href="{% url 'index' %}">Scenes</a></li>
+                <li><a href="{% url 'scenes_create' %}">Create</a></li>
+                
+                </ul>
                 {% endif %}
             </nav>
     

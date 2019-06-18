@@ -5,6 +5,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('profile/', views.profile, name='profile'),
     path('login/', views.login, name="login"),
+    path('signup/', views.signup, name="signup"),
     path('scenes/', views.scenes_index, name="index"),
     path('scenes/<int:scene_id>/', views.scenes_detail, name='detail'),
     path('scenes/create/', views.SceneCreate.as_view(), name='scenes_create'),
