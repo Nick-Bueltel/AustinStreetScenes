@@ -3,6 +3,20 @@ body {
     
 }
 
+.card {
+    font-family: 'Raleway', sans-serif;
+    
+}
+.card-content {
+    color: Black;
+    
+
+}
+#card-title {
+    font-weight: bold;
+}
+
+
 html {
 
     font-size: 17px;
