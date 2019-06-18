@@ -6,7 +6,8 @@ import uuid
 import boto3
 from .models import Scene, Photo
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import authenticate
+from django.contrib.auth import login as auth_login
 
 
 S3_BASE_URL = 'https://s3-us-west-1.amazonaws.com/'
@@ -77,7 +78,7 @@ def signup(request):
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
-            login(request, user)
+            auth_login(request, user)
             return redirect('home')
     else:
         form = UserCreationForm()
