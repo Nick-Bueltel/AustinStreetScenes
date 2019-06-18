@@ -1,0 +1,30 @@
+body {
+
+    
+}
+
+.card {
+    font-family: 'Raleway', sans-serif;
+    
+}
+.card-content {
+    color: Black;
+    
+
+}
+#card-title {
+    font-weight: bold;
+}
+
+
+html {
+
+    font-size: 17px;
+}
+nav {
+    height: 100px;
+    line-height: 100px;
+    font-family: 'Teko', sans-serif;
+    border-bottom: 5px solid teal;
+    
+}
