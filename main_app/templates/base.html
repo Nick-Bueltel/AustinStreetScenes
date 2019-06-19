@@ -31,7 +31,7 @@
                 <li><a href="{% url 'myposts_list' %}">Profile</a></li>
                 <li><a href="{% url 'scenes_create' %}">Create</a></li>
 
-                <li class="right"><a href="{% url 'logout' %}?next={% url 'home' %} ">logout</
+                <li class=""><a href="{% url 'logout' %}?next={% url 'home' %} ">logout</
                 </ul>
                 {% else %}
                 <ul id ="nav-mobile" class="right hide-on-med-and-down">
@@ -39,7 +39,7 @@
                 <li><a href="{% url 'signup' %}">Signup</a></li> 
                 <li><a href="{% url 'index' %}">Scenes</a></li>
                 </ul>
-                <ul id="nav-mobile" class="right hide-on-large-only">
+                <ul id="nav-mobile" class="hide-on-large-only">
                 <li><a href="{% url 'signup' %}">Signup</a></li> 
                 <li><a href="{% url 'login' %}">Log In</a></li>
 
