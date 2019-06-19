@@ -18,7 +18,7 @@
     
         <nav class="nav-wraper black">
                 <!-- changes below -->
-                <a href="#" class="brand-logo"> AUSTIN STREET SCENES</a>
+                <a href="{% url 'index' %}" class="brand-logo"> AUSTIN STREET SCENES</a>
                 {% if user.is_authenticated %}
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
 
@@ -27,13 +27,22 @@
                 <li><a href="{% url 'myposts_list' %}">Profile</a></li>
                 <li><a href="{% url 'logout' %}?next={% url 'home' %} ">logout</a></li>
                 </ul>
+                <ul id="nav-mobile" class="hide-on-large-only">
+                <li><a href="{% url 'myposts_list' %}">Profile</a></li>
+                <li><a href="{% url 'scenes_create' %}">Create</a></li>
+
+                <li class="right"><a href="{% url 'logout' %}?next={% url 'home' %} ">logout</
+                </ul>
                 {% else %}
                 <ul id ="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="{% url 'login' %}">Log In</a></li>
                 <li><a href="{% url 'signup' %}">Signup</a></li> 
                 <li><a href="{% url 'index' %}">Scenes</a></li>
-                <li><a href="{% url 'scenes_create' %}">Create</a></li>
-                
+                </ul>
+                <ul id="nav-mobile" class="right hide-on-large-only">
+                <li><a href="{% url 'signup' %}">Signup</a></li> 
+                <li><a href="{% url 'login' %}">Log In</a></li>
+
                 </ul>
                 {% endif %}
             </nav>
