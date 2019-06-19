@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.http import HttpResponse
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 import uuid
 import boto3
 from .models import Scene, Photo
+from .forms import LoginForm
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 
 
 S3_BASE_URL = 'https://s3-us-west-1.amazonaws.com/'
@@ -61,24 +62,37 @@ def add_photo(request, scene_id):
             print('An error occurred uploading file to S3')
     return redirect('detail', scene_id=scene_id)
 
-def login(request):
-    return render(request, 'login.html')
+def login_view(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            u = form.cleaned_data['username']
+            p = form.cleaned_data['password']
+            user = authenticate(username = u, password = p)
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
+                    return redirect('scenes')
+                else:
+                    print("The account has been disabled.")
+            else:
+                print("The username and/or password is incorrect.")
+    else:
+        form = LoginForm()
+    return render(request, 'login.html', {'form': form})
 
 def myposts(request):
     scenes = Scene.objects.all()
     return render(request, 'myposts.html' ,{ 'scenes': scenes })
 
 
-def signup(request):
+def signup_view(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
+            user = form.save()
             login(request, user)
-            return redirect('home')
+            return redirect('/scenes/')
     else:
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
