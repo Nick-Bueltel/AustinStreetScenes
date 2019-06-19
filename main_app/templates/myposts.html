@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="container" class="center-align">
-<div>
-<div class=" m7">
+<div class="container">
+<div class="center-align">
+
 
   <div class="card horizontal">
     <div class="card-image">
@@ -14,23 +14,19 @@
       </div>
     </div>
   </div>
-</div>
-</div>
-</div>
+
+
 
 {% for scene in scene_list %}
 
-<div class="container">
-<div class = "center-align">
-    {% for photo in scene.photo_set.all %}
-      <img class="responsive-img card-panel card large" src="{{photo.url}}">
+
+    
+  {% for photo in scene.photo_set.all %}
+      <img class="responsive-img card-panel card large" src="{{photo.url}}" style="width:100%">
     {% empty %}
       <div class="card-panel teal-text center-align">No Photos Uploaded</div>
     {% endfor %}
-</div>
-</div>
 
-<div class="container">
 <div class="" >   
   <div class="card">
       <a href="{% url 'detail' scene.id %}"></a>
@@ -41,7 +37,8 @@
         </div>
       </div>
   </div>
-
+</div>
+</div>
 
 {% endfor %}
 {% endblock %}
