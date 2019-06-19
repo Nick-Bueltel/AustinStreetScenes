@@ -14,12 +14,14 @@
       </div>
     </div>
   </div>
-
+</div>
+</div>
 
 
 {% for scene in scene_list %}
 
-
+    <div class="container">
+    <div class="center-align">
     
   {% for photo in scene.photo_set.all %}
       <img class="responsive-img card-panel card large" src="{{photo.url}}" style="width:100%">
@@ -39,6 +41,7 @@
   </div>
 </div>
 </div>
-
+</div>
+</div>
 {% endfor %}
 {% endblock %}
