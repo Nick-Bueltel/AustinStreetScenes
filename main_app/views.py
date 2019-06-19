@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.http import HttpResponse
+from django.views.generic.base import TemplateView
 from django.views.generic import ListView, DetailView
 import uuid
 import boto3
@@ -16,7 +17,11 @@ BUCKET = 'txstreetart'
 
 class SceneCreate(CreateView):
     model = Scene
-    fields = '__all__'
+    fields = ['location', 'description']
+    
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 class SceneUpdate(UpdateView):
     model = Scene
@@ -25,6 +30,11 @@ class SceneUpdate(UpdateView):
 class SceneDelete(DeleteView):
     model = Scene
     success_url = '/scenes/'
+
+class myposts(ListView):
+    template_name = 'myposts.html'
+    def get_queryset(self):
+        return self.request.user.scene_set.all()
 
 
 def home(request):
@@ -81,10 +91,6 @@ def login_view(request):
     else:
         form = LoginForm()
     return render(request, 'login.html', {'form': form})
-
-def myposts(request):
-    scenes = Scene.objects.all()
-    return render(request, 'myposts.html' ,{ 'scenes': scenes })
 
 
 def signup_view(request):
