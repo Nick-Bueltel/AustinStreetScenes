@@ -40,10 +40,6 @@ class myposts(ListView):
 def home(request):
     return render(request, 'home.html')
 
-def profile(request):
-    scenes = Scene.objects.all()
-    return render(request, 'profile.html' , { 'scenes': scenes })
-
 def scenes_index(request):
     scenes = Scene.objects.all()
     return render(request,'scenes/index.html', { 'scenes': scenes })

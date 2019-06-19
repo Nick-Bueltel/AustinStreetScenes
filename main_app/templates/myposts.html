@@ -1,7 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
 
-{{ user.username }}
+
+<div class="col s12 m7">
+
+  <div class="card horizontal">
+    <div class="card-image">
+      <img src="https://lorempixel.com/100/190/nature/6">
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <p>{{user.username}}</p>
+      </div>
+      <div class="card-action">
+      </div>
+    </div>
+  </div>
+</div>
 
 {% for scene in scene_list %}
 
