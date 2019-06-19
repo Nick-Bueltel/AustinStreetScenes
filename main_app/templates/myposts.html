@@ -1,7 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
 
-{{ user.username }}
+
+<div class=" m7">
+
+  <div class="card horizontal">
+    <div class="card-image">
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <p>User: {{user.username}}</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% for scene in scene_list %}
 
