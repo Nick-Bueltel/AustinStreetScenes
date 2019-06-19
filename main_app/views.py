@@ -31,7 +31,8 @@ def home(request):
     return render(request, 'home.html')
 
 def profile(request):
-    return render(request, 'profile.html')
+    scenes = Scene.objects.all()
+    return render(request, 'profile.html' , { 'scenes': scenes })
 
 def scenes_index(request):
     scenes = Scene.objects.all()

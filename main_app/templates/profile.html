@@ -1,27 +1,53 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>{{ user.username }}</h1>
 
+<div class="col s12 m7">
+
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="https://lorempixel.com/100/190/nature/6">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <h3>{{user.username}}</h3>
+        </div>
+        <div class="card-action">
+        </div>
+      </div>
+    </div>
+  </div>
+            
+
+<h1>{{user.username}}</h1>
+
+
+<p>Your posts</p>
 {% for scene in scenes %}
-
-
-
+<div class="container">
 <div class = "center-align">
+  
     {% for photo in scene.photo_set.all %}
-      <img class="responsive-img card-panel card large" src="{{photo.url}}">
+      <img class="responsive-img card-panel card large" style="width:100%" src="{{photo.url}}">
     {% empty %}
       <div class="card-panel teal-text center-align">No Photos Uploaded</div>
     {% endfor %}
-</div>
+     </div>
     <div class="card">
             <a href="{% url 'detail' scene.id %}">
             <div class="card-content">
-                <span class="card-title"><h3> {{ scene.location }} </h3> </span>
-                <p>Description: {{ scene.description }}</p>
+              
+                <b><div class="card-title"><b>{{ scene.location }}</b></div></b>
+                <br>
+                <br>
+                <br>
+             <p> <div class="desc"> {{ scene.description }}</div></p>
+             <br>
+             <br>
             </div>
         </a>
-    </div>
-
+      </div>
+    
+  </div>
 {% endfor %}
 {% endblock %}
