@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Delete Scene</h1>
+<div class="center-align" style="font-family:Raleway;">
+  <h1><b>Delete Scene<b></h1>
 
-  <h4>Are you sure you want to delete <span class="teal-text">{{ object.location }}</span>?</h4>
-
+ <div class="del"> <h4>Are you sure you want to delete <span class="black-text"> <b>{{ object.location }}</span>?</h4>
+ </div>
   <form action="" method="POST">
     {% csrf_token %}
-    <input type="submit" value="Yes - Delete!" class="btn">
+    <input type="submit" value="Yes - Delete!" class="btn" style="background-color:red">
     <a href="{% url 'detail' scene.id %}">Cancel</a>
   </form>
+</div>
 {% endblock %}

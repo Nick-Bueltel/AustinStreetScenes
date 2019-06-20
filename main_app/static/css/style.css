@@ -43,7 +43,7 @@
 .desc {
     position: absolute;
     top:70px;
-    left: 100px;
+    left: 90px;
     right: 50px;
     color: black;
     font-family: 'Raleway', sans-serif;
@@ -66,3 +66,4 @@ nav {
 /* .topleft {
     position: absolute;
 } */
+
