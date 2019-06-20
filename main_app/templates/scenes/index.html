@@ -5,19 +5,20 @@
 
 {% for scene in scenes %}
 <div class="container">
-<div class = "center-align">
+<div class = "center-align" style="border-bottom:none;">
   
     {% for photo in scene.photo_set.all %}
-      <img class="responsive-img card-panel card large" style="width:100%" src="{{photo.url}}">
+      <img class="responsive-img card-panel card large" style="width:100%;box-shadow:none!important;" src="{{photo.url}}">
     {% empty %}
       <div class="card-panel teal-text center-align">No Photos Uploaded</div>
     {% endfor %}
      </div>
-    <div class="card">
+    <div class="card" style="box-shadow:none!important;">
             <a href="{% url 'detail' scene.id %}">
             <div class="card-content">
               
-                <b><div class="card-title"><b>{{ scene.location }} <br> {{ scene.user }}</b></div></b>
+                <b><div class="card-title">{{ scene.location }}</div><img src="https://img.icons8.com/windows/32/000000/like.png" style="position:absolute; top:0; left:745px"><img src="https://img.icons8.com/material-outlined/24/000000/topic.png" style="position:absolute; top:4px; left:790px">
+                <div class="user-title">{{ scene.user }}</div> 
                 <br>
                 <br>
                 <br>
