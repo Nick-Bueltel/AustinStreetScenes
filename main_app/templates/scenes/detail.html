@@ -4,22 +4,40 @@
 
 
 {% for photo in scene.photo_set.all %}
+<div class="container">
 <div class="center-align">
-      <img class="responsive-img card-panel" style="box-shadow:none; width:80%;" src="{{photo.url}}">
+      <img class="responsive-img card-panel"  style="box-shadow:none" src="{{photo.url}}">
     {% empty %}
-      <div class="card-panel teal-text center-align">No Photos Uploaded</div>
+      <div class="card-panel teal-text">No Photos Uploaded</div>
     {% endfor %}
   </div>
-<div class="card">
-  <div class="card-content" style="margin:20px 80px 0px 80px">
-    <span class="card-title" style="font-size:25px;">{{ scene.location }}</span>
-    <div class="user-title">{{ scene.user }}</div> 
-    <div class="description" style="margin:20px 50px 20px 50px"><p>{{ scene.description }}</p></div>
-  </div>
-  <div class="card-action">
-        <a href="{% url 'scenes_update' scene.id %}">Edit</a>
-        <a href="{% url 'scenes_delete' scene.id %}">Delete</a>
-      </div>
 </div>
+{% if user.username == scene.user.username %}
+<form action="{% url 'add_photo' scene.id %}" enctype="multipart/form-data" method="POST" class="card-panel center-align" style="box-shadow:none;">
+    {% csrf_token %}
+    <input type="file" name="photo-file" style="transform:translate(25px, 0px);">
+    <br><br>
+    <input type="submit" class="btn" value="Upload Photo">
+</form>
+{% else %}
+{% endif %}
+<div class="container" style="width:70%">
+<div class="card"  style="box-shadow:none">
+  <div class="card-content">
+    <div class="card-title" style="font-size:23px;">{{ scene.location }}</div>
+    <div class="user-title">{{ scene.user }}</div> 
+    <br>
+    <div class="descr" style="font-family:Raleway">
+    <p>{{ scene.description }}</p>
+  </div>
+  </div>
+</div>
+</div>
+<br>
+  <div class="card-action center-align">
+        <a href="{% url 'scenes_update' scene.id %}">Edit</a>
+        <a href="{% url 'scenes_delete' scene.id %}" style="color:red">Delete</a>
+      </div>
 
+<br>
 {% endblock %}
