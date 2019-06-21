@@ -1,44 +1,44 @@
-# GraffitiFind ReadMe 
+# Austin Street Scenes - ReadMe 
 
-## GAmeChangers
+## The GAmeChangers
 
-Allison Waldrop - Lead Designer
+* Allison Waldrop - Lead Designer
 
-Andrew Miscoe - Database Management, CSS junkie, Software Engineer
+* Andrew Miscoe - Database Management, CSS junkie, Lead Software Engineer
 
-Kipaya Kapiga - Scrum Master, Designer
+* Kipaya Kapiga - Scrum Master, Designer
 
-Nick Bueltel - GitHub Manager, Software Engineer
+* Nick Bueltel - GitHub Manager, Software Engineer, Deployment mule
 
 
 
-## An introduction of your app along with a screenshot (one is all you need to "introduce" your application).
+## Introduction
 
-* [screenshot here]
-* GraffitiFind Is a webapp/website for users to post pictures of graffiti/street art they have found, and to share it with others. 
+![](https://i.imgur.com/vCV92H1.png)
+* Austin Street Scenes Is a webapp/website for users to post pictures of graffiti/street art they have found, and to share it with others. 
 
 ## Explanations of the **technologies** used (including outside APIs).
 
 * Django - a Python3 web framework 
 * PostgreSQL - an SQL database 
 * AWS - Hosting for images
+* Heroku - Deployment
 
-## A link to your **pitch-deck**.
+## Pitch Deck
 
-* Link Here
+* [Pitch Deck](https://docs.google.com/presentation/d/1oMsYr9WfkJy16YtmxMgc2wlvOXkWsuXfixgaV7X4oLU/edit)
 
 ## Trello 
 
-- https://trello.com/b/0u1c1JGP/gamechangers
+* [Trello Board](https://trello.com/b/0u1c1JGP/gamechangers)
 
 ## Heroku 
 
-- link here
+* [Austin Street Scenes](https://austinstreetscenes.herokuapp.com)
 
 ## IceBox
 
-- Description of any **future enhancements** planned.
-
-  - icebox here 
-
-    
+* Social features - Comment, Share, Like
+* Enhanced text editor 
+* Profile pictures
+* Customizable Profile
