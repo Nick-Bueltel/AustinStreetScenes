@@ -1,65 +1,41 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="container">
-<div class="center-align">
-
-
-  <div class="card horizontal">
-    <div class="card-image">
-    </div>
-    <div class="card-stacked">
-      <div class="card-content">
-        <p>User: {{user.username}}</p>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+{{ user.username }}
 
 {% for scene in scene_list %}
 <div class="container">
 <div class = "center-align" style="border-bottom:none;">
 
-  {% for photo in scene.photo_set.all %}
-  <img class="responsive-img card-panel card large" style="width:100%;box-shadow:none!important;" src="{{photo.url}}">
+ {% for photo in scene.photo_set.all %}
+ <img class="responsive-img card-panel card large" style="width:100%;box-shadow:none!important;" src="{{photo.url}}">
 {% empty %}
-  <div class="card-panel teal-text center-align">No Photos Uploaded</div>
+ <div class="card-panel teal-text center-align">No Photos Uploaded</div>
 {% endfor %}
- </div>
+</div>
 <div class="card" style="box-shadow:none!important;">
-        <a href="{% url 'detail' scene.id %}">
-        <div class="card-content">
-          
-            <b><div class="card-title">{{ scene.location }}</div><img src="https://img.icons8.com/windows/32/000000/like.png" style="position:absolute; top:0; left:745px"><img src="https://img.icons8.com/material-outlined/24/000000/topic.png" style="position:absolute; top:4px; left:790px">
-            <br>
-            <br>
-            <br>
-         <p> <div class="desc"> {{ scene.description }}</div></p>
-         <br>
-         
-        </div>
-    </a>
-  </div>
-  <div class="card-action center-align" style="font-weight:normal;">
-    <a href="{% url 'scenes_update' scene.id %}">Edit</a>
-    <a href="{% url 'scenes_delete' scene.id %}" style="color:red">Delete</a>
-  </div>
+       <a href="{% url 'detail' scene.id %}">
+       <div class="card-content">
+
+           <b><div class="card-title">{{ scene.location }}</div><img src="https://img.icons8.com/windows/32/000000/like.png
+https://img.icons8.com/windows/32/000000/like.png
+" style="position:absolute; top:0; left:745px"><img src="https://img.icons8.com/material-outlined/24/000000/topic.png
+https://img.icons8.com/material-outlined/24/000000/topic.png
+" style="position:absolute; top:4px; left:790px">
+           <br>
+           <br>
+           <br>
+        <p> <div class="desc"> {{ scene.description }}</div></p>
+        <br>
+
+       </div>
+   </a>
+ </div>
+ <div class="card-action center-align" style="font-weight:normal;">
+   <a href="{% url 'scenes_update' scene.id %}">Edit</a>
+   <a href="{% url 'scenes_delete' scene.id %}" style="color:red">Delete</a>
+ </div>
 </div>
 
-<div class="" >   
-  <div class="card">
-      <a href="{% url 'detail' scene.id %}"></a>
-        <div class="card-content">
-          <span class="card-content"><p> {{ scene.location }} </p> </span>
-          <p class="desc">Description: {{ scene.description }}</p>
-        
-        </div>
-      </div>
-  </div>
-</div>
-</div>
-</div>
-</div>
 {% endfor %}
 {% endblock %}
